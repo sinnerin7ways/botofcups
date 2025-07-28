@@ -1,0 +1,2 @@
+# botofcups
+A channeling bot
