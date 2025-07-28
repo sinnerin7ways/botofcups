@@ -1,46 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Tarot</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-        <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 
-        <script src="deck.js"></script>
-        <script>
-            window.onload = function() {         
-                shuffleCards();
-                drawCards();
-                document.getElementById("pastCard").innerHTML = selections[0].name;
-                document.getElementById("pastCard").href = selections[0].wiki;
-                if (selections[0].upright == false) {
-                    document.getElementById("pastCard").style.transform = "rotate(180deg)";
-                }
-                document.getElementById("presentCard").innerHTML = selections[1].name;
-                document.getElementById("presentCard").href = selections[1].wiki;
-                if (selections[1].upright == false) {
-                    document.getElementById("presentCard").style.transform = "rotate(180deg)";
-                }
-                document.getElementById("futureCard").innerHTML = selections[2].name;
-                document.getElementById("futureCard").href = selections[2].wiki;
-                if (selections[2].upright == false) {
-                    document.getElementById("futureCard").style.transform = "rotate(180deg)";
-                }
+    <script src="action.js"></script>
+    <script>
+        window.onload = function() {         
+            shuffleCards();
+            drawCards();
+            document.getElementById("pastCard").innerHTML = selections[0].name;
+            document.getElementById("pastCard").href = selections[0].wiki;
+            if (selections[0].upright == false) {
+                document.getElementById("pastCard").style.transform = "rotate(180deg)";
             }
-        </script>
-    </head>
-    <body>
-        <header id="header">Bot of Cups Tarot</header>
-        <p id ="layout">Past</p>
-        <a id="pastCard" target="_blank"></a>
-        <p id ="layout">Present</p>
-        <a id="presentCard" target="_blank"></a>
-        <p id ="layout">Future</p>
-        <a id="futureCard" target="_blank"></a>
-        <a href="../index.html">
-            <img src="../assets/botofcups.png" id="footer">
-        </a>
-
-    </body>
+            document.getElementById("presentCard").innerHTML = selections[1].name;
+            document.getElementById("presentCard").href = selections[1].wiki;
+            if (selections[1].upright == false) {
+                document.getElementById("presentCard").style.transform = "rotate(180deg)";
+            }
+            document.getElementById("futureCard").innerHTML = selections[2].name;
+            document.getElementById("futureCard").href = selections[2].wiki;
+            if (selections[2].upright == false) {
+                document.getElementById("futureCard").style.transform = "rotate(180deg)";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header id="header">Bot of Cups: Tarot</header>
+    <p id ="layout">Past</p>
+    <a id="pastCard" target="_blank"></a>
+    <p id ="layout">Present</p>
+    <a id="presentCard" target="_blank"></a>
+    <p id ="layout">Future</p>
+    <a id="futureCard" target="_blank"></a>
+    <a href="../index.html">
+        <img src="../assets/botofcups.png" id="footer">
+    </a>
+</body>
 </html>
