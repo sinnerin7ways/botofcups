@@ -8,8 +8,17 @@
             }
 
             #header {
-                font-family: "Comic Sans MS", cursive, sans-serif;
+                font-family: "Comic Sans MS", sans-serif;
                 text-align: center;
+                font-size: clamp(3rem, 5vw, 4rem);
+
+            }
+
+            #word1, #word2, #word3, #word4, #word5 {
+                font-family: "Comic Sans MS", sans-serif;
+                text-align: center;
+                font-size: clamp(2rem, 4vw, 3rem);
+                color: white;
             }
         </style>
         <script>
@@ -17,8 +26,18 @@
                 .then(response => response.json())
                 .then(data => {
                     const words = Object.keys(data); // grab all the words
-                    const randomWord = words[Math.floor(Math.random() * words.length)];
-                    document.getElementById("word1").textContent = randomWord;
+                    const randomWord1 = words[Math.floor(Math.random() * words.length)];
+                    const randomWord2 = words[Math.floor(Math.random() * words.length)];
+                    const randomWord3 = words[Math.floor(Math.random() * words.length)];
+                    const randomWord4 = words[Math.floor(Math.random() * words.length)];
+                    const randomWord5 = words[Math.floor(Math.random() * words.length)];
+
+                    document.getElementById("word1").textContent = randomWord1;
+                    document.getElementById("word2").textContent = randomWord2;
+                    document.getElementById("word3").textContent = randomWord3;
+                    document.getElementById("word4").textContent = randomWord4;
+                    document.getElementById("word5").textContent = randomWord5;
+
                 })
                 .catch(error => {
                 console.error('Error loading JSON:', error);
