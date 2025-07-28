@@ -33,3 +33,7 @@ body {
     margin-right: auto;
     width: clamp(8rem, 9vw, 10rem);
 }
+a:visited {
+  color: inherit;
+  opacity: 1;
+}
