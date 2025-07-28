@@ -3,7 +3,7 @@ fetch("words_dictionary.json")
         .then(data => {
             const words = Object.keys(data); // grab all the words
             const randomWord = words[Math.floor(Math.random() * words.length)];
-            console.log(randomWord);
+            document.getElementById("word1").textContent = randomWord;
         })
         .catch(error => {
         console.error('Error loading JSON:', error);
