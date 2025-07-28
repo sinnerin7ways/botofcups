@@ -2,74 +2,38 @@
 <html>
     <head>
         <title>Bot of Cups</title>
-        <style>
-            body {
-                background-color: purple;
-            }
-            #header {
-                font-family: "Comic Sans MS", sans-serif;
-                text-align: center;
-                font-size: clamp(3rem, 5vw, 4rem);
-                color: goldenrod;
-
-            }
-            #pastCard, #presentCard, #futureCard {
-                font-family: "Comic Sans MS", sans-serif;
-                text-align: center;
-                font-size: clamp(3rem, 4vw, 4rem);
-                color: white;
-                border-top: 0px;
-                margin-top: 0px;
-                padding-top: 0px;
-                margin-bottom: 0px;
-
-            }
-            #desc {
-                font-family: "Comic Sans MS", sans-serif;
-                text-align: center;
-                font-size: clamp(2rem, 3vw, 3rem);
-                border-bottom: 0px;
-                margin-bottom: 0px;
-                padding-bottom: 0px;
-                color: gold;
-
-            }
-            #pastLink, #presentLink, #futureLink {
-                display: block;
-                font-family: "Comic Sans MS", sans-serif;
-                text-align: center;
-                font-size: clamp(1rem, 2vw, 1.5rem);
-                margin-top: 0px;
-                color: goldenrod;
-
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
         <script src="deck.js"></script>
         <script>
             window.onload = function() {         
+                shuffleCards();
                 drawCards();
-
                 document.getElementById("pastCard").innerHTML = selections[0].name;
-                document.getElementById("pastLink").href = selections[0].wiki;
+                document.getElementById("pastCard").href = selections[0].wiki;
+                if (selections[0].upright == false) {
+                    document.getElementById("pastCard").style.transform = "rotate(180deg)";
+                }
                 document.getElementById("presentCard").innerHTML = selections[1].name;
-                document.getElementById("presentLink").href = selections[1].wiki;
+                document.getElementById("presentCard").href = selections[1].wiki;
+                if (selections[1].upright == false) {
+                    document.getElementById("presentCard").style.transform = "rotate(180deg)";
+                }
                 document.getElementById("futureCard").innerHTML = selections[2].name;
-                document.getElementById("futureLink").href = selections[2].wiki;
-
+                document.getElementById("futureCard").href = selections[2].wiki;
+                if (selections[2].upright == false) {
+                    document.getElementById("futureCard").style.transform = "rotate(180deg)";
+                }
             }
         </script>
     </head>
     <body>
-        <h1 id="header">Bot of Cups</h1>
-        <p id ="desc">Past</p>
-        <p id="pastCard"></p>
-        <a href="" id="pastLink" target="_blank">Wiki</a>
-        <p id ="desc">Present</p>
-        <p id="presentCard"></p>
-        <a href="" id="presentLink" target="_blank">Wiki</a>
-        <p id ="desc">Future</p>
-        <p id="futureCard"></p>
-        <a href="" id="futureLink" target="_blank">Wiki</a>
+        <header id="header">Bot of Cups</header>
+        <p id ="layout">Past</p>
+        <a id="pastCard" target="_blank"></a>
+        <p id ="layout">Present</p>
+        <a id="presentCard" target="_blank"></a>
+        <p id ="layout">Future</p>
+        <a id="futureCard" target="_blank"></a>
 
     </body>
 </html>

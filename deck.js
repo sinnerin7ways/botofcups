@@ -90,17 +90,27 @@ const deck = [
 var selections = [];
 
 
+function shuffleCards() {
+  for (var i=0; i<deck.length; i++) {
+    let rev = Math.round(Math.random());
+    if (rev == 0) {
+      deck[i].upright = true;
+    }else {
+      deck[i].upright = false;
+    }
+  }
+}
+
 function drawCards() {
-
-    var index = Math.floor(Math.random() * deck.length);
-    selections.push(deck[index]);
-    deck.splice(index, -1);
+  var index = Math.floor(Math.random() * deck.length);
+  selections.push(deck[index]);
+  deck.splice(index, -1);
                     
-    index = Math.floor(Math.random() * deck.length);
-    selections.push(deck[index]);
-    deck.splice(index, -1);
+  index = Math.floor(Math.random() * deck.length);
+  selections.push(deck[index]);
+  deck.splice(index, -1);
 
-    index = Math.floor(Math.random() * deck.length);
-    selections.push(deck[index]);
-    deck.splice(index, -1);
+  index = Math.floor(Math.random() * deck.length);
+  selections.push(deck[index]);
+  deck.splice(index, -1);
 }
