@@ -6,52 +6,139 @@
             body {
                 background-color: purple;
             }
-
             #header {
                 font-family: "Comic Sans MS", sans-serif;
                 text-align: center;
                 font-size: clamp(3rem, 5vw, 4rem);
+                color: goldenrod;
 
             }
-
-            #word1, #word2, #word3, #word4, #word5 {
+            #pastCard, #presentCard, #futureCard {
                 font-family: "Comic Sans MS", sans-serif;
                 text-align: center;
                 font-size: clamp(2rem, 4vw, 3rem);
                 color: white;
+                border-top: 0px;
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+            #desc {
+                font-family: "Comic Sans MS", sans-serif;
+                text-align: center;
+                font-size: clamp(1rem, 3vw, 2rem);
+                border-bottom: 0px;
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+                color: gold;
+
             }
         </style>
         <script>
-            fetch("words_dictionary.json")
-                .then(response => response.json())
-                .then(data => {
-                    const words = Object.keys(data); // grab all the words
-                    const randomWord1 = words[Math.floor(Math.random() * words.length)];
-                    const randomWord2 = words[Math.floor(Math.random() * words.length)];
-                    const randomWord3 = words[Math.floor(Math.random() * words.length)];
-                    const randomWord4 = words[Math.floor(Math.random() * words.length)];
-                    const randomWord5 = words[Math.floor(Math.random() * words.length)];
+            window.onload = function() {         
+                const deck = [
+                { name: "The Fool", upright: true },
+                { name: "The Magician", upright: true },
+                { name: "The High Priestess", upright: true },
+                { name: "The Empress", upright: true },
+                { name: "The Emperor", upright: true },
+                { name: "The Hierophant", upright: true },
+                { name: "The Lovers", upright: true },
+                { name: "The Chariot", upright: true },
+                { name: "Strength", upright: true },
+                { name: "The Hermit", upright: true },
+                { name: "Wheel of Fortune", upright: true },
+                { name: "Justice", upright: true },
+                { name: "The Hanged Man", upright: true },
+                { name: "Death", upright: true },
+                { name: "Temperance", upright: true },
+                { name: "The Devil", upright: true },
+                { name: "The Tower", upright: true },
+                { name: "The Star", upright: true },
+                { name: "The Moon", upright: true },
+                { name: "The Sun", upright: true },
+                { name: "Judgement", upright: true },
+                { name: "The World", upright: true },
+                { name: "Ace of Wands", upright: true },
+                { name: "Two of Wands", upright: true },
+                { name: "Three of Wands", upright: true },
+                { name: "Four of Wands", upright: true },
+                { name: "Five of Wands", upright: true },
+                { name: "Six of Wands", upright: true },
+                { name: "Seven of Wands", upright: true },
+                { name: "Eight of Wands", upright: true },
+                { name: "Nine of Wands", upright: true },
+                { name: "Ten of Wands", upright: true },
+                { name: "Page of Wands", upright: true },
+                { name: "Knight of Wands", upright: true },
+                { name: "Queen of Wands", upright: true },
+                { name: "King of Wands", upright: true },
+                { name: "Ace of Cups", upright: true },
+                { name: "Two of Cups", upright: true },
+                { name: "Three of Cups", upright: true },
+                { name: "Four of Cups", upright: true },
+                { name: "Five of Cups", upright: true },
+                { name: "Six of Cups", upright: true },
+                { name: "Seven of Cups", upright: true },
+                { name: "Eight of Cups", upright: true },
+                { name: "Nine of Cups", upright: true },
+                { name: "Ten of Cups", upright: true },
+                { name: "Page of Cups", upright: true },
+                { name: "Knight of Cups", upright: true },
+                { name: "Queen of Cups", upright: true },
+                { name: "King of Cups", upright: true },
+                { name: "Ace of Swords", upright: true },
+                { name: "Two of Swords", upright: true },
+                { name: "Three of Swords", upright: true },
+                { name: "Four of Swords", upright: true },
+                { name: "Five of Swords", upright: true },
+                { name: "Six of Swords", upright: true },
+                { name: "Seven of Swords", upright: true },
+                { name: "Eight of Swords", upright: true },
+                { name: "Nine of Swords", upright: true },
+                { name: "Ten of Swords", upright: true },
+                { name: "Page of Swords", upright: true },
+                { name: "Knight of Swords", upright: true },
+                { name: "Queen of Swords", upright: true },
+                { name: "King of Swords", upright: true },
+                { name: "Ace of Pentacles", upright: true },
+                { name: "Two of Pentacles", upright: true },
+                { name: "Three of Pentacles", upright: true },
+                { name: "Four of Pentacles", upright: true },
+                { name: "Five of Pentacles", upright: true },
+                { name: "Six of Pentacles", upright: true },
+                { name: "Seven of Pentacles", upright: true },
+                { name: "Eight of Pentacles", upright: true },
+                { name: "Nine of Pentacles", upright: true },
+                { name: "Ten of Pentacles", upright: true },
+                { name: "Page of Pentacles", upright: true },
+                { name: "Knight of Pentacles", upright: true },
+                { name: "Queen of Pentacles", upright: true },
+                { name: "King of Pentacles", upright: true }];
 
-                    document.getElementById("word1").textContent = randomWord1;
-                    document.getElementById("word2").textContent = randomWord2;
-                    document.getElementById("word3").textContent = randomWord3;
-                    document.getElementById("word4").textContent = randomWord4;
-                    document.getElementById("word5").textContent = randomWord5;
+                var index = Math.floor(Math.random() * deck.length);
+                const pastCard = deck[index];
+                deck.splice(index, -1);
+                index = Math.floor(Math.random() * deck.length);
+                const presentCard = deck[Math.floor(Math.random() * deck.length)];
+                deck.splice(index, -1);
+                index = Math.floor(Math.random() * deck.length);
+                const futureCard = deck[Math.floor(Math.random() * deck.length)];
+                deck.splice(index, -1);
 
-                })
-                .catch(error => {
-                console.error('Error loading JSON:', error);
-                });
-
+                document.getElementById("pastCard").innerHTML = pastCard.name;
+                document.getElementById("presentCard").innerHTML = presentCard.name;
+                document.getElementById("futureCard").innerHTML = futureCard.name;
+            }
         </script>
     </head>
     <body>
         <h1 id="header">Bot of Cups</h1>
-        <p id="word1"></p>
-        <p id="word2"></p>
-        <p id="word3"></p>
-        <p id="word4"></p>
-        <p id="word5"></p>
+        <p id ="desc">Past</p>
+        <p id="pastCard"></p>
+        <p id ="desc">Present</p>
+        <p id="presentCard"></p>
+        <p id ="desc">Future</p>
+        <p id="futureCard"></p>
 
     </body>
 </html>
