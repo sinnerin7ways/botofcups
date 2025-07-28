@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="main.js"></script>
-        <link rel="stylesheet" href="style.css">
         <title>Bot of Cups</title>
+        <style>
+            body {
+                background-color: purple;
+            }
+
+            #header {
+                font-family: "Comic Sans MS", cursive, sans-serif;
+                text-align: center;
+            }
+        </style>
+        <script>
+            fetch("words_dictionary.json")
+                .then(response => response.json())
+                .then(data => {
+                    const words = Object.keys(data); // grab all the words
+                    const randomWord = words[Math.floor(Math.random() * words.length)];
+                    document.getElementById("word1").textContent = randomWord;
+                })
+                .catch(error => {
+                console.error('Error loading JSON:', error);
+                });
+
+        </script>
     </head>
     <body>
         <h1 id="header">Bot of Cups</h1>
