@@ -27,3 +27,9 @@ body {
     padding-bottom: 0px;
     color: #c9ab57;
 }
+#footer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: clamp(8rem, 9vw, 10rem);
+}
