@@ -1,21 +1,19 @@
 body {
     background-color: #511963;
     text-align: center;
+    font-family: "Comic Sans MS", sans-serif;
 }
 #header {
-    font-family: "Comic Sans MS", sans-serif;
-    text-align: center;
-    font-size: clamp(3rem, 5vw, 4rem);
+    font-size: clamp(4rem, 5.5vw, 7rem);
     color: #c9ab57;
 }
-#subheader {
-    font-family: "Comic Sans MS", sans-serif;
-    text-align: center;
+.subheader {
     font-size: clamp(2rem, 3vw, 3rem);
-    border-bottom: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
     color: #c9ab57;
+}
+.text {
+    font-size: clamp(3rem, 4vw, 4rem);
+    color: #ffe499;
 }
 #footerLink {
     display: inline-block;
@@ -26,23 +24,3 @@ body {
     display: block;
     margin: 0 auto;
 }
-#text {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    font-family: "Comic Sans MS", sans-serif;
-    font-size: clamp(3rem, 4vw, 4rem);
-    color: #ffe499;
-    padding-top: 0;
-}
-a:visited {
-    color: inherit;
-    opacity: 1;
-}
-
-
-
-
-
-
-

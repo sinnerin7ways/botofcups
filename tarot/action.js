@@ -88,9 +88,7 @@ const deck = [
   { name: "King of Pentacles", upright: true, wiki: "https://labyrinthos.co/blogs/tarot-card-meanings-list/king-of-pentacles-meaning-tarot-card-meanings" }
 ];
 
-
 var selections = [];
-
 
 function shuffleCards() {
   for (var i=0; i<deck.length; i++) {
