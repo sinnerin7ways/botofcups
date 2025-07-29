@@ -1,5 +1,6 @@
 body {
     background-color: #511963;
+    text-align: center;
 }
 #header {
     font-family: "Comic Sans MS", sans-serif;
@@ -16,24 +17,32 @@ body {
     padding-bottom: 0px;
     color: #c9ab57;
 }
-#footer {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#footerLink {
+    display: inline-block;
+    text-align: center;
+}
+#footerImg {
     width: clamp(8rem, 9vw, 10rem);
+    display: block;
+    margin: 0 auto;
 }
 #text {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
     font-family: "Comic Sans MS", sans-serif;
-    text-align: center;
     font-size: clamp(3rem, 4vw, 4rem);
     color: #ffe499;
-    border-top: 0px;
-    margin-top: 0px;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    display: block;
+    padding-top: 0;
 }
 a:visited {
-  color: inherit;
-  opacity: 1;
+    color: inherit;
+    opacity: 1;
 }
+
+
+
+
+
+
+
