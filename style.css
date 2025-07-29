@@ -10,6 +10,8 @@ body {
 .subheader {
     font-size: clamp(2rem, 3vw, 3rem);
     color: #c9ab57;
+    margin-top: 50px;
+    margin-bottom: 0;
 }
 .text {
     font-size: clamp(3rem, 4vw, 4rem);
