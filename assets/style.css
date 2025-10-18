@@ -5,25 +5,45 @@ body {
     text-align: center;
     font-family: "Comic Sans MS", sans-serif;
 }
+
+ul.readings-list {
+    list-style: none;    /* Removes bullet points */
+    padding: 0;          /* Removes default padding */
+    margin: 0 auto;      /* Centers the list */
+    max-width: 400px;    /* Keeps it from stretching too wide */
+}
+
+ul.readings-list li {
+    margin-top: 0;       /* Reset */
+    margin-bottom: clamp(3rem, 4vw, 4rem); /* SAME margin as .text! */
+}
+
+a:empty {
+    display: none; /* Hides empty links entirely */
+}
+
 #header {
     font-size: clamp(4rem, 5.5vw, 7rem);
     color: #c9ab57;
 }
+
 .subheader {
     font-size: clamp(2rem, 3vw, 3rem);
     color: #c9ab57;
     margin-top: 50px;
-    margin-bottom: 0;
-
+    margin-bottom: 50px;
 }
+
 .text {
     font-size: clamp(3rem, 4vw, 4rem);
     color: #ffe499;
 }
+
 #footerLink {
     display: inline-block;
     text-align: center;
 }
+
 #footerImg {
     width: clamp(8rem, 9vw, 10rem);
     display: block;
