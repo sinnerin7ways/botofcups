@@ -2,8 +2,10 @@ body {
     background-image: url("../assets/backgroundimg.png");
     background-repeat: repeat;
     background-size: 256px;
+    background-attachment: fixed;
     text-align: center;
     font-family: "Comic Sans MS", sans-serif;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 ul.readings-list {
