@@ -1,10 +1,15 @@
 body {
+    margin: 0;
     background-image: url("../assets/backgroundimg.png");
     background-repeat: repeat;
     background-size: 256px;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
     font-family: "Comic Sans MS", sans-serif;
+    min-height: 100vh;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
@@ -16,8 +21,8 @@ ul.readings-list {
 }
 
 ul.readings-list li {
-    margin-top: 0;       /* Reset */
-    margin-bottom: clamp(3rem, 4vw, 4rem); /* SAME margin as .text! */
+    margin-top: 50px;       /* Reset */
+    margin-bottom: 0px; /* SAME margin as .text! */
 }
 
 a:empty {
@@ -33,7 +38,7 @@ a:empty {
     font-size: clamp(2rem, 3vw, 3rem);
     color: #c9ab57;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 .text {
@@ -50,4 +55,5 @@ a:empty {
     width: clamp(8rem, 9vw, 10rem);
     display: block;
     margin: 0 auto;
+    padding-top: 50px;
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <script src="../assets/libs/p5.js"></script>
+
+    <style>
+        #canvasContainer {
+            width: 60% !important;
+            aspect-ratio: 1 / 1;
+            max-width: 100%;
+            padding-top: 50px;
+        }
+        #canvasContainer canvas {
+            width: 100% !important; /* Canvas fills the container */
+            height: 100% !important; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below canvas */
+        }
+        #randColors {
+        font-family: "Comic Sans MS", sans-serif;
+        color: #c9ab57;
+        background-color: #511963
+
+        }
+
+    </style>
+
+    <title>Paint</title>
+
+</head>
+
+<body>
+    <header id="header">Paint</header>
+
+    <div id="canvasContainer"></div>
+    <script src="action.js"></script>
+    
+    <p class ="subheader">Controls:</p>
+
+    <ul class ="readings-list">
+        <li><p class="text">Colors</p></li>
+        <button id="randColors">Randomize</button>
+        <li><p class="text">Background</p></li>
+        <li><p class="text">Foreground</p></li>
+        <li><p class="text">Overlay</p></li>
+
+    </ul>
+
+    <a href="../" id="footerLink">
+        <img src="../assets/footerimg.png" id="footerImg">
+    </a>
+
+</body>
+
+</html>
