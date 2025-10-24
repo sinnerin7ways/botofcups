@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -25,10 +25,17 @@
             height: 100% !important;
             display: block;
         }
-        #randColors {
+        #randColors, #savePNG {
         font-family: "Comic Sans MS", sans-serif;
-        color: #c9ab57;
-        background-color: #511963
+        color: #ffe499;
+        background-color: #511963;
+        }
+        #savePNG {
+            margin-top: 50px;
+        }
+        .radioList {
+            font-family: "Comic Sans MS", sans-serif;
+            color: #ffe499;
         }
     </style>
 
@@ -48,9 +55,27 @@
         <li><p class="text">Colors</p></li>
         <button id="randColors">Randomize</button>
         <li><p class="text">Background</p></li>
+        <div>
+            <label class="radioList"><input type="radio" name="bgSelect" value="none" checked>None</label>
+            <label class="radioList"><input type="radio" name="bgSelect" value="circular">Circular</label>
+            <label class="radioList"><input type="radio" name="bgSelect" value="rectangular">Rectangular</label>
+            <label class="radioList"><input type="radio" name="bgSelect" value="grid">Grid</label>
+        </div>
         <li><p class="text">Foreground</p></li>
+        <div>
+            <label class="radioList"><input type="radio" name="fgSelect" value="none" checked>None</label>
+            <label class="radioList"><input type="radio" name="fgSelect" value="trees">Trees</label>
+            <label class="radioList"><input type="radio" name="fgSelect" value="eyes">Eyes</label>
+            <label class="radioList"><input type="radio" name="fgSelect" value="random">Random</label>
+        </div>
         <li><p class="text">Overlay</p></li>
-
+        <div>
+            <label class="radioList"><input type="radio" name="olSelect" value="none" checked>None</label>
+            <label class="radioList"><input type="radio" name="olSelect" value="vignette">Vignette</label>
+            <label class="radioList"><input type="radio" name="olSelect" value="bars">Bars</label>
+            <label class="radioList"><input type="radio" name="olSelect" value="static">Static</label>
+        </div>
+        <button id="savePNG">Save Painting</button>
     </ul>
 
     <a href="../" id="footerLink">
